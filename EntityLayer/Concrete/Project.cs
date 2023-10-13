@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Gallery
+    public class Project
     {
         [Key]
-        public int GalleryID { get; set; }
+        public int ProjectID { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
         public string ImageUrl { get; set; }
-
     }
 }

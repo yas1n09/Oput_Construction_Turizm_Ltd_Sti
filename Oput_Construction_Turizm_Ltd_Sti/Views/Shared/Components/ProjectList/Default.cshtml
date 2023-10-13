@@ -1,0 +1,119 @@
+﻿@using EntityLayer.Concrete
+@model List<Project>
+
+
+<section class="project_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                Referans Projelerimiz
+            </h2>
+        </div>
+        <div class="carousel-wrap ">
+            
+            <div class="owl-carousel project_carousel">
+                @foreach (var item in Model)
+                {
+                <div class="item painting">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="@item.ImageUrl" alt="" />
+                            <a href="" class="pin_link">
+                                <i class="fa fa-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                @item.Name
+                            </h5>
+                            <p>
+                                @item.Description
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                }
+
+
+
+                @* <div class="item reconstruction">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="~/template/images/project2.jpg" alt="" />
+                            <a href="" class="pin_link">
+                                <i class="fa fa-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                Interior work
+                            </h5>
+                            <p>
+                                alteration in some form, by injected humour, or randomised words which don't look even slightly
+                                believable. If you are going to use
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item repair">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="~/template/images/project1.jpg" alt="" />
+                            <a href="" class="pin_link">
+                                <i class="fa fa-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                Interior work
+                            </h5>
+                            <p>
+                                alteration in some form, by injected humour, or randomised words which don't look even slightly
+                                believable. If you are going to use
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item residential">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="~/template/images/project1.jpg" alt="" />
+                            <a href="" class="pin_link">
+                                <i class="fa fa-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                Interior work
+                            </h5>
+                            <p>
+                                alteration in some form, by injected humour, or randomised words which don't look even slightly
+                                believable. If you are going to use
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item styling">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="~/template/images/project1.jpg" alt="" />
+                            <a href="" class="pin_link">
+                                <i class="fa fa-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                Interior work
+                            </h5>
+                            <p>
+                                alteration in some form, by injected humour, or randomised words which don't look even slightly
+                                believable. If you are going to use
+                            </p>
+                        </div>
+                    </div>
+                </div> *@
+            </div>
+            
+        </div>
+    </div>
+</section>
