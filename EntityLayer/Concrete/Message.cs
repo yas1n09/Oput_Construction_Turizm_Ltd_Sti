@@ -13,8 +13,6 @@ namespace EntityLayer.Concrete
         public int MessageID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Subject { get; set; }
-        public string ConctactNumber { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
         public bool Status { get; set; }

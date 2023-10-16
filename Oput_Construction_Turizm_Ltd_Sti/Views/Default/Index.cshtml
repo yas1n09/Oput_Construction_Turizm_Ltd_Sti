@@ -7,14 +7,19 @@
 <html>
 
 
-    @await Html.PartialAsync("HeaderPartial")
+    @* @await Html.PartialAsync("HeaderPartial") *@
+
+@await Component.InvokeAsync("Header")
+
 
 <body>
 
     <div class="hero_area">
         <!-- header section strats -->
 
-        @await Html.PartialAsync("NavbarPartial")
+        @* @await Html.PartialAsync("NavbarPartial") *@
+        @await Component.InvokeAsync("Navbar")
+
 
         <!-- end header section -->
         <!-- slider section -->
@@ -45,239 +50,22 @@
 
     <!-- end client section -->
     <!-- why us section -->
-
-    <section class="why_us_section layout_padding">
-        <div class="container">
-            <div class="heading_container">
-                <h2>
-                    Why Choose Us?
-                </h2>
-            </div>
-            <div class="why_us_container">
-                <div class="box">
-                    <div class="img-box">
-                        <img src="~/template/images/w1.png" alt="">
-                    </div>
-                    <div class="detail-box">
-                        <h5>
-                            Project done on time
-                        </h5>
-                        <p>
-                            Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
-                            making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
-                            Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-                            going through the
-                        </p>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img-box">
-                        <img src="~/template/images/w2.png" alt="">
-                    </div>
-                    <div class="detail-box">
-                        <h5>
-                            Always avaliable
-                        </h5>
-                        <p>
-                            Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
-                            making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
-                            Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-                            going through the
-                        </p>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="img-box">
-                        <img src="~/template/images/w3.png" alt="">
-                    </div>
-                    <div class="detail-box">
-                        <h5>
-                            Professional and responsible
-                        </h5>
-                        <p>
-                            Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
-                            making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
-                            Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-                            going through the
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="btn-box">
-                <a href="">
-                    Read More
-                </a>
-            </div>
-        </div>
-    </section>
+    @await Component.InvokeAsync("WhyChooseUsList")
 
     <!-- end why us section -->
     <!-- contact section -->
-    <section class="contact_section layout_padding-bottom">
-        <div class="container-fluid">
-            <div class="col-lg-4 col-md-5 offset-md-1">
-                <div class="heading_container">
-                    <h2>
-                        Contact Us
-                    </h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-5 offset-md-1">
-                    <div class="form_container">
-                        <form action="">
-                            <div>
-                                <input type="text" placeholder="Your Name" />
-                            </div>
-                            <div>
-                                <input type="text" placeholder="Phone Number" />
-                            </div>
-                            <div>
-                                <input type="email" placeholder="Email" />
-                            </div>
-                            <div>
-                                <input type="text" class="message-box" placeholder="Message" />
-                            </div>
-                            <div class="btn_box">
-                                <button>
-                                    SEND
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-6 px-0">
-                    <div class="map_container">
-                        <div class="map">
-                            <div id="googleMap"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   @*  @await Component.InvokeAsync("SendMessage") *@
+    @await Html.PartialAsync("SendMessage")
     <!-- end contact section -->
     <!-- info section -->
-    <section class="info_section ">
+    @await Component.InvokeAsync("ContactDetails")
 
-        <div class="container">
-            <div class="contact_nav">
-                <a href="">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span>
-                        Call : +01 123455678990
-                    </span>
-                </a>
-                <a href="">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span>
-                        Email : demo@gmail.com
-                    </span>
-                </a>
-                <a href="">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <span>
-                        Location
-                    </span>
-                </a>
-            </div>
-
-            <div class="info_top ">
-                <div class="row info_main_row">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="info_links">
-                            <h4>
-                                QUICK LINKS
-                            </h4>
-                            <div class="info_links_menu">
-                                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                                <a class="" href="service.html">Services</a>
-                                <a class="" href="about.html"> About</a>
-                                <a class="" href="project.html">Project</a>
-                                <a class="" href="testimonial.html">Testimonial</a>
-                                <a class="" href="contact.html">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 mx-auto">
-                        <div class="info_post">
-                            <h5>
-                                INSTAGRAM FEEDS
-                            </h5>
-                            <div class="post_box">
-                                <div class="img-box">
-                                    <img src="~/template/images/instagram.jpg" alt="">
-                                </div>
-                                <div class="img-box">
-                                    <img src="~/template/images/instagram.jpg" alt="">
-                                </div>
-                                <div class="img-box">
-                                    <img src="~/template/images/instagram.jpg" alt="">
-                                </div>
-                                <div class="img-box">
-                                    <img src="~/template/images/instagram.jpg" alt="">
-                                </div>
-                                <div class="img-box">
-                                    <img src="~/template/images/instagram.jpg" alt="">
-                                </div>
-                                <div class="img-box">
-                                    <img src="~/template/images/instagram.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info_form">
-                            <h4>
-                                SIGN UP TO OUR NEWSLETTER
-                            </h4>
-                            <form action="">
-                                <input type="text" placeholder="Enter Your Email" />
-                                <button type="submit">
-                                    Subscribe
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="info_bottom">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="info_logo">
-                            <a href="">
-                                <img src="~/template/images/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ml-auto">
-                        <div class="social_box">
-                            <a href="">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
     <!-- end info_section -->
     <!-- footer section -->
     <footer class="footer_section">
         <div class="container">
             <p>
-                &copy; <span id="displayYear"></span> All Rights Reserved By
-                <a href="https://html.design/">Free Html Templates</a>
+                &copy; <span id="displayYear"></span> All Rights Reserved 
             </p>
         </div>
     </footer>

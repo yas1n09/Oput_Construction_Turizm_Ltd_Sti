@@ -1,0 +1,81 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+
+
+
+<section class="info_section ">
+
+    <div class="container">
+        @foreach(var item in Model){
+        <div class="contact_nav">
+            <h2>@item.Title</h2>
+            <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                    Telefon Numarası :@item.PhoneNumber 
+                </span>
+            </a>
+            <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                        Email : @item.Mail
+                </span>
+            </a>
+            <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                        Adres : @item.Address
+                </span>
+            </a>
+        </div>
+        }
+
+        <div class="info_top ">
+            <div class="row info_main_row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="info_links">
+                        <h4>
+                            HIZLI GEZİNTİ
+                        </h4>
+                        <div class="info_links_menu">
+                            <a class="" href="index.html">Ana SAyfa <span class="sr-only">(current)</span></a>
+                            <a class="" href="service.html">Hizmetler</a>
+                            <a class="" href="about.html"> Hakkımızda</a>
+                            <a class="" href="project.html">Projeler</a>
+                            <a class="" href="testimonial.html">Referanslar</a>
+                            <a class="" href="contact.html">İletişim</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info_bottom">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="info_logo">
+                        <a href="">
+                            <img src="~/template/images/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 ml-auto">
+                    <div class="social_box">
+                        <a href="">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

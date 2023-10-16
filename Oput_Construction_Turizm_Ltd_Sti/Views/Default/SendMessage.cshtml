@@ -1,0 +1,40 @@
+﻿<section class="contact_section layout_padding-bottom">
+    <div class="container-fluid">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+            <div class="heading_container">
+                <h2>
+                    Bize Ulaşın
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-5 offset-md-1">
+                <div class="form_container">
+                    <form action="/Default/SendMessage/" method="post">
+                        <div>
+                            <input class="form-control" type="text" name="Name" placeholder="Adınız" required />
+                        </div>
+                        <div>
+                            <input class="form-control" type="email" name="Email" placeholder="Email Adresiniz" required />
+                        </div>
+                        <div>
+                            <input class="form-control message-box" type="text" name="Content"  placeholder="Mesajınız" required />
+                        </div>
+                        <div class="btn_box">
+                            <button type="submit">
+                                GÖNDER
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6 px-0">
+                <div class="map_container">
+                    <div class="map">
+                        <div id="googleMap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
