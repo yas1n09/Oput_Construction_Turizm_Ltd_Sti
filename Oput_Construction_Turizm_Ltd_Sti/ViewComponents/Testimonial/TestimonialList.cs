@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Oput_Construction_Turizm_Ltd_Sti.ViewComponents.Testimonial
+namespace Oput.ViewComponents.Testimonial
 {
     public class TestimonialList : ViewComponent
     {

@@ -22,7 +22,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Message> Messages { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
-        public DbSet<Team> Teams { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<WhyChooseUs> WhyChooseUses { get; set;}
 

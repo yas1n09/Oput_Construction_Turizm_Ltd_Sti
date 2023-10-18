@@ -14,12 +14,15 @@
 
     @Html.Label("Proje Adı")
     @Html.TextBoxFor(x=>x.Name, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.Name)
     <br />
     @Html.Label("Proje Açıklaması")
     @Html.TextAreaFor(x=>x.Description, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.Description)
     <br />
     @Html.Label("Proje Resimi")
     @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.ImageUrl)
     
     
     <button class="btn btn-primary">Güncelle</button>

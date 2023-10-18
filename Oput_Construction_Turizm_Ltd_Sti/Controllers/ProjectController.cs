@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Oput.Controllers
@@ -21,8 +23,22 @@ namespace Oput.Controllers
         [HttpPost]
         public IActionResult AddProject(Project project)
         {
-            projectManager.TAdd(project);
-            return RedirectToAction("Index");
+
+            ProjectValidator validations = new ProjectValidator();
+            ValidationResult results = validations.Validate(project);
+            if (results.IsValid)
+            {
+                projectManager.TAdd(project);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
         public IActionResult DeleteProject(int id)
         {
@@ -33,14 +49,30 @@ namespace Oput.Controllers
         [HttpGet]
         public IActionResult EditProject(int id)
         {
+
+
+
             var values = projectManager.TGetByID(id);
             return View(values);
         }
         [HttpPost]
         public IActionResult EditProject(Project project)
         {
-            projectManager.TUpdate(project);
-            return RedirectToAction("Index");
+            ProjectValidator validations = new ProjectValidator();
+            ValidationResult results = validations.Validate(project);
+            if (results.IsValid)
+            {
+                projectManager.TUpdate(project);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }

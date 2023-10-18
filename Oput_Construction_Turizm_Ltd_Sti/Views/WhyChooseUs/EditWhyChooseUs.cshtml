@@ -1,29 +1,30 @@
-﻿@model EntityLayer.Concrete.About
+﻿@model EntityLayer.Concrete.WhyChooseUs
 @{
-    ViewData["Title"] = "EditAbout";
+    ViewData["Title"] = "EditWhyChooseUs";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-    <h6 class="text-white text-capitalize ps-3">Hakkımızda Düzenleme Sayfası</h6>
+    <h6 class="text-white text-capitalize ps-3">Neden Biz? Düzenleme Sayfası</h6>
 </div>
 <br />
-@using (Html.BeginForm("EditAbout", "About", FormMethod.Post))
+@using (Html.BeginForm("EditWhyChooseUs", "WhyChooseUs", FormMethod.Post))
 {
-    @Html.HiddenFor(x=>x.AboutID)
+    @Html.HiddenFor(x=>x.WhyChooseUsID)
 
     @Html.Label("Hizmet Başlığı")
     @Html.TextBoxFor(x=>x.Title, new {@class = "form-control"})
-    @Html.ValidationMessageFor(x=>x.Title)
+    @Html.ValidationMessageFor(x => x.Title)
+
     <br />
     @Html.Label("Hizmet Açıklaması")
     @Html.TextAreaFor(x=>x.Description, new {@class = "form-control"})  
-    @Html.ValidationMessageFor(x=>x.Description)
+    @Html.ValidationMessageFor(x => x.Description)
 
     <br />
     @Html.Label("Hizmet Resimi")
     @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
-    @Html.ValidationMessageFor(x=>x.ImageUrl)
+    @Html.ValidationMessageFor(x => x.ImageUrl)
 
     <br />
     <button class="btn btn-primary">Güncelle</button>

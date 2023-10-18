@@ -1,4 +1,4 @@
-﻿
+﻿@model EntityLayer.Concrete.Project
 @{
     ViewData["Title"] = "AddProject";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -9,7 +9,31 @@
 </div>
 <br />
 
-<form class="form-group" method="post">
+@using (Html.BeginForm("AddProject", "Project", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ProjectID)
+
+    @* @Html.Label("Hizmet Başlığı") *@
+    <label>Hizmet Başlığı</label>
+    @Html.TextBoxFor(x=>x.Name, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Name)
+    <br />
+    @* @Html.Label("Hizmet Açıklaması") *@
+    <label>Hizmet Açıklaması</label>
+    @Html.TextAreaFor(x=>x.Description, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Description)
+    <br /> 
+    @* @Html.Label("Hizmet Resimi") *@
+    <label>Hizmet Resimi</label>
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.ImageUrl)
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+}
+
+
+
+@* <form class="form-group" method="post">
     <label>Hizmet Başlığı</label>
     <input type="text" name="Name" class="form-control" placeholder="Proje Adı Giriniz" />
     <br />
@@ -23,3 +47,4 @@
     <button class="btn btn-primary">Kaydet</button>
 </form>
 
+ *@

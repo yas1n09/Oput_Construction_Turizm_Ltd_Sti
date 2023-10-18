@@ -1,13 +1,14 @@
 ﻿using EntityLayer.Concrete;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Abstract
+namespace BusinessLayer.ValidationRules
 {
-    public interface ITeamDal : IGenericDal<Team>
+    public class TestimonialValidator : AbstractValidator<Testimonial>
     {
     }
 }

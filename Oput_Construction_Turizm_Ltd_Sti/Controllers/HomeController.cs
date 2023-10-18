@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Oput_Construction_Turizm_Ltd_Sti.Models;
+using Oput.Models;
 using System.Diagnostics;
 
-namespace Oput_Construction_Turizm_Ltd_Sti.Controllers
+namespace Oput.Controllers
 {
     public class HomeController : Controller
     {

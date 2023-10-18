@@ -2,34 +2,35 @@
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation;
 using FluentValidation.Results;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Oput.Controllers
 {
-    public class ServiceController : Controller
+    public class WhyChooseUsController : Controller
     {
-        ServiceManager serviceManager = new ServiceManager(new EfServiceDal());
+        WhyChooseUsManager whyChooseUsManager = new WhyChooseUsManager(new EfWhyChooseUsDal());
         public IActionResult Index()
         {
-            var values = serviceManager.TGetList();
+            var values = whyChooseUsManager.TGetList();
             return View(values);
         }
+
         [HttpGet]
-        public IActionResult AddService()
+        public IActionResult AddWhyChooseUs()
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult AddService(Service service)
-        {
 
-            ServiceValidator validations = new ServiceValidator();
-            ValidationResult results = validations.Validate(service);
+        [HttpPost]
+        public IActionResult AddWhyChooseUs(WhyChooseUs whyChooseUs)
+        {
+            WhyChooseUsValidator validations = new WhyChooseUsValidator();
+            ValidationResult results = validations.Validate(whyChooseUs);
             if (results.IsValid)
             {
-                serviceManager.TAdd(service);
+                whyChooseUsManager.TAdd(whyChooseUs);
                 return RedirectToAction("Index");
             }
             else
@@ -41,29 +42,28 @@ namespace Oput.Controllers
             }
             return View();
         }
-        public IActionResult DeleteService(int id)
+
+        public IActionResult DeleteWhyChooseUs(int id)
         {
-            var values = serviceManager.TGetByID(id);
-            serviceManager.TDelete(values);
+            var values = whyChooseUsManager.TGetByID(id);
+            whyChooseUsManager.TDelete(values);
             return RedirectToAction("Index");
         }
+
         [HttpGet]
-        public IActionResult EditService(int id)
+        public IActionResult EditWhyChooseUs(int id)
         {
-            var values = serviceManager.TGetByID(id);
+            var values = whyChooseUsManager.TGetByID(id);
             return View(values);
         }
-
-
-
         [HttpPost]
-        public IActionResult EditService(Service service)
+        public IActionResult EditWhyChooseUs(WhyChooseUs whyChooseUs)
         {
-            ServiceValidator validations = new ServiceValidator();
-            ValidationResult results = validations.Validate(service);
+            WhyChooseUsValidator validations = new WhyChooseUsValidator();
+            ValidationResult results = validations.Validate(whyChooseUs);
             if (results.IsValid)
             {
-                serviceManager.TUpdate(service);
+                whyChooseUsManager.TUpdate(whyChooseUs);
                 return RedirectToAction("Index");
             }
             else

@@ -1,0 +1,52 @@
+﻿@model EntityLayer.Concrete.WhyChooseUs
+
+@{
+    ViewData["Title"] = "AddWhyChooseUs";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+    <h6 class="text-white text-capitalize ps-3">Neden biz? Ekleme Sayfası</h6>
+</div>
+<br />
+
+
+
+@using (Html.BeginForm("AddWhyChooseUs", "WhyChooseUs", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.WhyChooseUsID)
+
+    @Html.Label("Hizmet Başlığı")
+    @Html.TextBoxFor(x=>x.Title, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.Title)
+
+    <br />
+    @Html.Label("Hizmet Açıklaması")
+    @Html.TextAreaFor(x=>x.Description, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.Description)
+    <br />
+    @Html.Label("Hizmet Resimi")
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.ImageUrl)
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+}
+
+
+
+
+
+
+@* <form class="form-group" method="post">
+    <label>Hizmet Başlığı</label>
+    <input type="text" name="Title" class="form-control" placeholder="Neden biz? Başlığı Giriniz" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" placeholder="Neden biz? Açıklaması Giriniz" />
+    <br />   
+    <label>Resim</label>
+    <input type="text" name="ImageUrl" class="form-control" placeholder="Neden biz? resmi seçiniz" />
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form> *@
+

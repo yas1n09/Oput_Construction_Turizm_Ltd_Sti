@@ -1,4 +1,4 @@
-﻿
+﻿@model EntityLayer.Concrete.Feature
 @{
     ViewData["Title"] = "AddFeature";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -9,7 +9,28 @@
 </div>
 <br />
 
-<form class="form-group" method="post">
+@using (Html.BeginForm("AddFeature", "Feature", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.FeatureID)
+
+    @* @Html.Label("Hizmet Başlığı") *@
+    <label>Hizmet Başlığı</label>
+    @Html.TextBoxFor(x=>x.Header, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Header)
+
+    <br />
+    @* @Html.Label("Hizmet Açıklaması") *@
+    <label>Hizmet Açıklaması</label>
+    @Html.TextBoxFor(x=>x.Name, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Name)
+
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+}
+
+
+
+@* <form class="form-group" method="post">
     <label>Hizmet Başlığı</label>
     <input type="text" name="Header" class="form-control" placeholder="Hizmet Başlığı Giriniz" />
     <br />   
@@ -17,5 +38,5 @@
     <input type="text" name="Name" class="form-control" placeholder="Hizmet Açıklaması Giriniz" />
     <br />
     <button class="btn btn-primary">Kaydet</button>
-</form>
+</form> *@
 

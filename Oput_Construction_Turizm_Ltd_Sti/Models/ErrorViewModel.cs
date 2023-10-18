@@ -1,4 +1,4 @@
-namespace Oput_Construction_Turizm_Ltd_Sti.Models
+namespace Oput.Models
 {
     public class ErrorViewModel
     {

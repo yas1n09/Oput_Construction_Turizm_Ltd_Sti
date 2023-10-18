@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Oput_Construction_Turizm_Ltd_Sti.ViewComponents.Header
+namespace Oput.ViewComponents.Header
 {
     public class Header : ViewComponent
     {

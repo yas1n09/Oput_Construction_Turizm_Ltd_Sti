@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Oput_Construction_Turizm_Ltd_Sti.ViewComponents.Navbar
+namespace Oput.ViewComponents.Navbar
 {
     public class Navbar : ViewComponent
     {

@@ -3,7 +3,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Oput_Construction_Turizm_Ltd_Sti.Controllers
+namespace Oput.Controllers
 {
     public class DefaultController : Controller
     {
@@ -21,8 +21,8 @@ namespace Oput_Construction_Turizm_Ltd_Sti.Controllers
             return PartialView();
         }
         [HttpGet]
-        public PartialViewResult SendMessage() 
-        { 
+        public PartialViewResult SendMessage()
+        {
             return PartialView();
         }
         [HttpPost]

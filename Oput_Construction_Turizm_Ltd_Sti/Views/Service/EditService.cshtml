@@ -1,6 +1,5 @@
 ﻿@model EntityLayer.Concrete.Service
 
-
 @{
     ViewData["Title"] = "EditService";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -14,14 +13,20 @@
 {
     @Html.HiddenFor(x=>x.ServiceID)
 
-    @Html.Label("Hizmet Başlığı")
+    @* @Html.Label("Hizmet Başlığı") *@
+    <label>Hizmet Başlığı</label>
     @Html.TextBoxFor(x=>x.Title, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Title)
     <br />
-    @Html.Label("Hizmet Resimi")
+    @* @Html.Label("Hizmet Resimi") *@
+    <label>Hizmet Resimi</label>
     @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.ImageUrl)
     <br />
-    @Html.Label("Hizmet Açıklaması")
+    @* @Html.Label("Hizmet Açıklaması") *@
+    <label>Hizmet Açıklaması</label>
     @Html.TextAreaFor(x=>x.Description, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Description)
     <br />
     <button class="btn btn-primary">Güncelle</button>
 }

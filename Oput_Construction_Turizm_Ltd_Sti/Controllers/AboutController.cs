@@ -1,6 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Oput.Controllers
@@ -22,8 +25,24 @@ namespace Oput.Controllers
         [HttpPost]
         public IActionResult EditAbout(About about)
         {
-            aboutManager.TUpdate(about);
-            return RedirectToAction("Index");
+            AboutValidator validations = new AboutValidator();
+            ValidationResult results = validations.Validate(about);
+
+            if(results.IsValid)
+            {
+                aboutManager.TUpdate(about);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View(about);
+
+            
         }
     }
 }

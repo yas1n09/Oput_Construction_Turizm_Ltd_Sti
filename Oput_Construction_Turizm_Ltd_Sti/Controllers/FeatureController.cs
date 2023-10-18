@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Oput.Controllers
@@ -24,8 +26,21 @@ namespace Oput.Controllers
         [HttpPost]
         public IActionResult AddFeature(Feature feature)
         {
-            featureManager.TAdd(feature);
-            return RedirectToAction("Index");
+            FeatureValidator validations = new FeatureValidator();
+            ValidationResult results = validations.Validate(feature);
+            if (results.IsValid)
+            {
+                featureManager.TAdd(feature);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
 
         public IActionResult DeleteFeature(int id)
@@ -38,14 +53,29 @@ namespace Oput.Controllers
         [HttpGet]
         public IActionResult EditFeature(int id)
         {
+
             var values = featureManager.TGetByID(id);
             return View(values);
         }
         [HttpPost]
         public IActionResult EditFeature(Feature feature)
         {
-            featureManager.TUpdate(feature);
-            return RedirectToAction("Index");
+            FeatureValidator validations = new FeatureValidator();
+            ValidationResult results = validations.Validate(feature);
+            if (results.IsValid)
+            {
+                featureManager.TUpdate(feature);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }
+
