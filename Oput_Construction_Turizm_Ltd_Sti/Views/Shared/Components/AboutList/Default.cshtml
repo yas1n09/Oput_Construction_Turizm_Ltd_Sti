@@ -2,7 +2,7 @@
 @model List<About>
 
 
-<section class="about_section">
+<section id="hakkimizda" class="about_section">
     <div class="container  ">
         @foreach(var item in Model){
         <div class="row">
@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-6 ">
                 <div class="img-box">
-                    <img src="~/template/images/about-img.jpg" alt="">
+                    <img src="@item.ImageUrl" alt="">
                 </div>
             </div>
 

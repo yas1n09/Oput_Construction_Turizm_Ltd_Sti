@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Project
+@{
+    ViewData["Title"] = "EditProject";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+    <h6 class="text-white text-capitalize ps-3">Proje Düzenleme Sayfası</h6>
+</div>
+<br />
+@using (Html.BeginForm("EditProject", "Project", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ProjectID)
+
+    @Html.Label("Proje Adı")
+    @Html.TextBoxFor(x=>x.Name, new {@class = "form-control"})
+    <br />
+    @Html.Label("Proje Açıklaması")
+    @Html.TextAreaFor(x=>x.Description, new {@class = "form-control"})
+    <br />
+    @Html.Label("Proje Resimi")
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
+    
+    
+    <button class="btn btn-primary">Güncelle</button>
+}
+
+

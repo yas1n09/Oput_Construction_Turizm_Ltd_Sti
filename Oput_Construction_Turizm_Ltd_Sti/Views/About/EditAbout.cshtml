@@ -1,27 +1,27 @@
-﻿@model EntityLayer.Concrete.Service
-
-
+﻿@model EntityLayer.Concrete.About
 @{
-    ViewData["Title"] = "EditService";
+    ViewData["Title"] = "EditAbout";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-    <h6 class="text-white text-capitalize ps-3">Hizmet Düzenleme Sayfası</h6>
+    <h6 class="text-white text-capitalize ps-3">Hakkımızda Düzenleme Sayfası</h6>
 </div>
 <br />
-@using (Html.BeginForm("EditService", "Service", FormMethod.Post))
+@using (Html.BeginForm("EditAbout", "About", FormMethod.Post))
 {
-    @Html.HiddenFor(x=>x.ServiceID)
+    @Html.HiddenFor(x=>x.AboutID)
 
     @Html.Label("Hizmet Başlığı")
     @Html.TextBoxFor(x=>x.Title, new {@class = "form-control"})
     <br />
+    @Html.Label("Hizmet Açıklaması")
+    @Html.TextAreaFor(x=>x.Description, new {@class = "form-control"})   
+    <br />
     @Html.Label("Hizmet Resimi")
     @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
     <br />
-    @Html.Label("Hizmet Açıklaması")
-    @Html.TextAreaFor(x=>x.Description, new {@class = "form-control"})
-    <br />
     <button class="btn btn-primary">Güncelle</button>
 }
+
+

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "AddProject";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+    <h6 class="text-white text-capitalize ps-3">Proje Ekleme Sayfası</h6>
+</div>
+<br />
+
+<form class="form-group" method="post">
+    <label>Hizmet Başlığı</label>
+    <input type="text" name="Name" class="form-control" placeholder="Proje Adı Giriniz" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" placeholder="Proje Açıklaması Giriniz" />
+    <br />
+    <label>Resim</label>
+    <input type="text" name="ImageUrl" class="form-control" placeholder="Proje resmi seçiniz" />
+    <br />
+    
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

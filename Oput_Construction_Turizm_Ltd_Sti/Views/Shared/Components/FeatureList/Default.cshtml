@@ -1,7 +1,8 @@
 ﻿@using EntityLayer.Concrete
 @model List<Feature>
 
-<section class="slider_section">
+
+<section id="anasayfa" class="slider_section">
     <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             @for (var i = 0; i < Model.Count; i++)
@@ -32,3 +33,4 @@
         </ol>
     </div>
 </section>
+
