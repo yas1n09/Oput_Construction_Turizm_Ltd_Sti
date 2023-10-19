@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.Testimonial
+@{
+    ViewData["Title"] = "AddTestimonial";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+    <h6 class="text-white text-capitalize ps-3">Referans Ekleme Sayfası</h6>
+</div>
+<br />
+@using (Html.BeginForm("AddTestimonial", "Testimonial", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.TestimonialID)
+
+    @* @Html.Label("Hizmet Başlığı") *@
+    <label>İsim</label>
+    @Html.TextBoxFor(x=>x.Name, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Name)
+    <br />
+    @* @Html.Label("Hizmet Başlığı") *@
+    <label>Meslek - Ünvan </label>
+    @Html.TextBoxFor(x=>x.Title, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Title)
+    <br />
+    @* @Html.Label("Hizmet Başlığı") *@
+    <label>Yorum</label>
+    @Html.TextBoxFor(x=>x.Comment, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Comment)
+    <br />
+    @* @Html.Label("Hizmet Başlığı") *@
+    <label>Resim</label>
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.ImageUrl)
+    <br />
+    
+    <button class="btn btn-primary">Ekle</button>
+}
+

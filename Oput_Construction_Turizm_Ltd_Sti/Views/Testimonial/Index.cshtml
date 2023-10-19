@@ -1,0 +1,74 @@
+﻿@using EntityLayer.Concrete
+@model List<Testimonial>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Referanslar</h6>
+                </div>
+            </div>
+
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">İsim</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Meslek - Ünvan</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yorum</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Resim</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sil</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Düzenle</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td class="align-middle text-center">
+                                        <span class="text-xs font-weight-bold mb-0">@item.TestimonialID</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-xs font-weight-bold mb-0">@item.Name</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-xs font-weight-bold mb-0">@item.Title</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-xs font-weight-bold mb-0">@item.Comment</span>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <span class="text-secondary text-xs font-weight-bold">@item.ImageUrl</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <span class="text-secondary text-xs font-weight-bold"><a class="btn btn-danger" href="/Testimonial/DeleteTestimonial/@item.TestimonialID">Sil</a></span>
+                                    </td>
+                                    <td class="align-middle">
+                                        <span class="text-secondary text-xs font-weight-bold"><a class="btn btn-warning" href="/Testimonial/EditTestimonial/@item.TestimonialID">Düzenle</a></span>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <div>
+                        <a href="/Testimonial/AddTestimonial/" class="btn btn-success">Yeni Referans Ekle</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

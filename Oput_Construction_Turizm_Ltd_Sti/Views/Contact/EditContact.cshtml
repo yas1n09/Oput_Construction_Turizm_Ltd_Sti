@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "EditContact";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+    <h6 class="text-white text-capitalize ps-3">İletişim Düzenleme Sayfası</h6>
+</div>
+<br />
+@using (Html.BeginForm("EditContact", "Contact", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ContactID)
+
+    
+    <label>İletişim Başlığı</label>
+    @Html.TextBoxFor(x=>x.Title, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Title)
+    <br />
+    <label> Telefon</label>
+    @Html.TextBoxFor(x=>x.PhoneNumber, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.PhoneNumber)
+    <br />
+    <label> Mail Adresi</label>
+    @Html.TextBoxFor(x=>x.Mail, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Mail)
+    <br />
+    <label>Adres</label>
+    @Html.TextBoxFor(x=>x.Address, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x=>x.Address)
+    <br />
+
+    <button class="btn btn-primary">Güncelle</button>
+}
+
