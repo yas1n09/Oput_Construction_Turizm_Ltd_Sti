@@ -26,13 +26,14 @@ namespace Oput.Controllers
             if (ModelState.IsValid)
 
             {
-                WriterUser w = new WriterUser()
+                var user = new WriterUser
                 {
+                    UserName = p.Mail,
                     Email=p.Mail,
 
                 };
 
-                var result=await _userManager.CreateAsync(w,p.Password);
+                var result=await _userManager.CreateAsync(user, p.Password);
             
                 if (result.Succeeded)
                 {

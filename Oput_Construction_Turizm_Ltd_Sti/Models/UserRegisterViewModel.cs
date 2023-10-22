@@ -4,6 +4,9 @@ namespace Oput.Models
 {
     public class UserRegisterViewModel
     {
+        //[Required(ErrorMessage = "Lütfen Kullanıcı Adı Giriniz")]
+        //public string UserName { get; set; }
+
         [Required(ErrorMessage ="Lütfen E-Mail Giriniz")]
         public string Mail { get; set; }
         

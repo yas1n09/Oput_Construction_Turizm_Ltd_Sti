@@ -20,6 +20,13 @@ namespace DataAccessLayer.Concrete
             optionsBuilder.UseSqlServer("Server=(LocalDb)\\MSSQLLocalDB;initial catalog=OputDb; Integrated Security=true;");
         }
 
+
+
+        
+
+
+
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Feature> Features { get; set; }

@@ -83,16 +83,24 @@
                         <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
                             <div class="card card-plain">
                                 <div class="card-header">
-                                    <h4 class="font-weight-bolder">Kayıt Ol</h4>
-                                    <p class="mb-0">Kayıt olmak İçin Email Ve Şifre Giriniz.</p>
+                                    <h4 class="font-weight-bolder">Admin Kaydet</h4>
+                                    <p class="mb-0">Admin Kaydetme.</p>
                                 </div>
                                 <div class="card-body">
                                     <form role="form" method="post">
+
+                                        @* <div class="input-group input-group-outline mb-3">
+                                            <label class="form-label">Kullanıcı Adı</label>
+                                            <span asp-validation-for="UserName" class="text-danger"></span>
+                                            <input type="email" asp-for="UserName" class="form-control">
+                                        </div> *@
+
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">E-mail</label>
                                             <span asp-validation-for="Mail" class="text-danger"></span>
                                             <input type="email" asp-for="Mail" class="form-control">
                                         </div>
+
                                         <div class="input-group input-group-outline mb-3">
                                             <label class="form-label">Parola</label>
                                             <span asp-validation-for="Password" class="text-danger"></span>
@@ -104,16 +112,14 @@
                                             <input type="password" asp-for="ConfirmPassword" class="form-control">
                                         </div>
 
+                                        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
                                         <div class="text-center">
-                                            <button  class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Kayıt Ol</button>
+                                            <button class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Admin Kaydet</button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                                    <p class="mb-2 text-sm mx-auto">
-                                        Zaten Hesabınız var mı?
-                                        <a href="../pages/sign-in.html" class="text-primary text-gradient font-weight-bold">Giriş Yap</a>
-                                    </p>
                                 </div>
                             </div>
                         </div>
