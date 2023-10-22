@@ -12,6 +12,9 @@ namespace DataAccessLayer.Concrete
 {
     public class Context :IdentityDbContext<WriterUser,WriterRole,int>
     {
+
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(LocalDb)\\MSSQLLocalDB;initial catalog=OputDb; Integrated Security=true;");

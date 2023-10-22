@@ -1,12 +1,15 @@
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<WriterUser, WriterRole>()
+    .AddEntityFrameworkStores<Context>()
+    .AddDefaultTokenProviders(); ;
 builder.Services.AddControllersWithViews();
 
 
