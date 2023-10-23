@@ -723,6 +723,7 @@
     <Folder Include="wwwroot\material-dashboard-2\.git\objects\info\" />
     <Folder Include="wwwroot\material-dashboard-2\.git\objects\pack\" />
     <Folder Include="wwwroot\material-dashboard-2\.git\refs\tags\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>
