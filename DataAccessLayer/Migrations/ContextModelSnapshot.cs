@@ -188,21 +188,21 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("SocialMedias");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.test1", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.test2", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Test2ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Test2ID"), 1L, 1);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Test2Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Test2ID");
 
-                    b.ToTable("test1s");
+                    b.ToTable("test2s");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Testimonial", b =>

@@ -7,7 +7,7 @@ namespace Oput.Controllers
 {
     public class RegisterController : Controller
     {
-       private readonly UserManager<WriterUser> _userManager;
+        private readonly UserManager<WriterUser> _userManager;
 
         public RegisterController(UserManager<WriterUser> userManager)
         {
@@ -17,27 +17,26 @@ namespace Oput.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View(new UserRegisterViewModel());
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Index(UserRegisterViewModel p)
         {
-            if (ModelState.IsValid)
-
+            WriterUser w = new WriterUser()
             {
-                var user = new WriterUser
-                {
-                    UserName = p.Mail,
-                    Email=p.Mail,
+                Email = p.Email,
+                UserName = p.Email
+            };
 
-                };
+            if (p.Password == p.ConfirmPassword)
+            {
+                var result = await _userManager.CreateAsync(w, p.Password);
 
-                var result=await _userManager.CreateAsync(user, p.Password);
-            
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index","Login");
+                    return RedirectToAction("Index");
                 }
                 else
                 {
@@ -47,8 +46,8 @@ namespace Oput.Controllers
                     }
                 }
             }
-
-            return View();
+            return View(p);
+            
         }
     }
 }

@@ -4,28 +4,28 @@
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class mig12deneme : Migration
+    public partial class mig_denemetest : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "test1s",
+                name: "test2s",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Test2ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Test2Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_test1s", x => x.Id);
+                    table.PrimaryKey("PK_test2s", x => x.Test2ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "test1s");
+                name: "test2s");
         }
     }
 }

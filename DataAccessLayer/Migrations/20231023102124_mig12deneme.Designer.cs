@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231022175134_mig12deneme")]
+    [Migration("20231023102124_mig12deneme")]
     partial class mig12deneme
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -190,21 +190,20 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("SocialMedias");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.test1", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Test1", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TestID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TestID"), 1L, 1);
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Name")
+                        .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("TestID");
 
-                    b.ToTable("test1s");
+                    b.ToTable("Test1s");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Testimonial", b =>

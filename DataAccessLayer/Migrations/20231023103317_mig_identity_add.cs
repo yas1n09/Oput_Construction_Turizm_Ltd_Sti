@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class mig_identity_test : Migration
+    public partial class mig_identity_add : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

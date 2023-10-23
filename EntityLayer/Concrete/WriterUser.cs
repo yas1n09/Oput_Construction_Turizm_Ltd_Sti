@@ -9,6 +9,5 @@ namespace EntityLayer.Concrete
 {
     public class WriterUser : IdentityUser<int>
     {
-        
     }
 }
