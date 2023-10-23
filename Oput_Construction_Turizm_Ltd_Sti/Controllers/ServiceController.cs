@@ -3,11 +3,13 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Oput.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ServiceController : Controller
     {
         ServiceManager serviceManager = new ServiceManager(new EfServiceDal());

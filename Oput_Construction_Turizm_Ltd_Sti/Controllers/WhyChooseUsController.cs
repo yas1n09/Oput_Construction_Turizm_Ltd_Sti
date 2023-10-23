@@ -4,10 +4,12 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Oput.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class WhyChooseUsController : Controller
     {
         WhyChooseUsManager whyChooseUsManager = new WhyChooseUsManager(new EfWhyChooseUsDal());

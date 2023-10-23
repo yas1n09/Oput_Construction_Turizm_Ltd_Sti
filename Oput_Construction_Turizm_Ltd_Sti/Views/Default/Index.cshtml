@@ -101,19 +101,23 @@
             var menuLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
             menuLinks.forEach(function (link) {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault(); // Sayfanın yeniden yüklenmesini önlemek için default davranışı engelle
+                // "Giriş" bağlantısını kontrol et
+                if (!link.href.includes('/Login/Index/')) {
+                    link.addEventListener("click", function (event) {
+                        event.preventDefault(); // Sayfanın yeniden yüklenmesini önlemek için default davranışı engelle
 
-                    var targetId = link.getAttribute("href").substring(1); // '#' işaretini kaldır
-                    var targetSection = document.getElementById(targetId);
+                        var targetId = link.getAttribute("href").substring(1); // '#' işaretini kaldır
+                        var targetSection = document.getElementById(targetId);
 
-                    // Hedef bölüme kaydır
-                    targetSection.scrollIntoView({
-                        behavior: "smooth"
+                        // Hedef bölüme kaydır
+                        targetSection.scrollIntoView({
+                            behavior: "smooth"
+                        });
                     });
-                });
+                }
             });
         });
+
     </script>
 
 </body>
